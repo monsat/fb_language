@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "fb language",
+    "version": "0.1",
+    "description": "change language settings easily",
+    "options_page": "options.html",
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "browser_action": {
+        "default_icon": "images/glossy-silver-icon-social-media-logos-facebook-logo-square.png",
+        "default_title": "change language settings"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.facebook.com/settings?*"],
+            "js": ["languages.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "tabs"
+    ]
+}
